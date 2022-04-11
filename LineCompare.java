@@ -39,11 +39,11 @@ public class LineCompare {
 
 	// checking lines are equal or not
 	public void compareTo() {
-		LineCompare obj = new LineCompare();
+		
 		int lengthOfLine1 = (int) Math
-				.sqrt((obj.x12 - obj.x11) * (obj.x12 - obj.x11) + (obj.y12 - obj.y11) * (obj.y12 - obj.y11));
+				.sqrt((x12 - x11) * (x12 - x11) + (y12 - y11) * (y12 - y11));
 		int lengthOfLine2 = (int) Math
-				.sqrt((obj.x22 - obj.x21) * (obj.x22 - obj.x21) + (obj.y22 - obj.y21) * (obj.y22 - obj.y21));
+				.sqrt((x22 - x21) * (x22 - x21) + (y22 - y21) * (y22 - y21));
 		if (lengthOfLine1 == lengthOfLine2)
 			System.out.println("Equal");
 		if (lengthOfLine1 > lengthOfLine2)
@@ -52,10 +52,22 @@ public class LineCompare {
 			System.out.println("Line1 is less than of Line2");
 	}
 
+	 public void equals()
+	    {
+	        int m1,m2;
+	        m1 = (y12-y11)/(x12-x11);
+	        m2 = (y22-y21)/(x22-x21);
+	        if(m1 == m2)
+	            System.out.println("Two lines are equal.");
+	        else
+	            System.out.println("Two lines are not equal.");
+	    }
+	 
 	public static void main(String args[]) {
 		System.out.println("Welcome to Line Comparison Computation Program ");
 		LineCompare obj = new LineCompare();
 		obj.Input();
+		obj.equals();
 		obj.compareTo();
 	}
 }
